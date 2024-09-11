@@ -12,7 +12,6 @@ import {
 import { CandlestickElement, CandlestickController } from 'chartjs-chart-financial';
 import { Chart } from 'react-chartjs-2';
 
-// Register the required components for the candlestick chart
 ChartJS.register(CandlestickElement, CandlestickController, CategoryScale, LinearScale, TimeScale, Tooltip);
 
 interface CandlestickChartProps {
@@ -22,37 +21,37 @@ interface CandlestickChartProps {
 const CandlestickChart: React.FC<CandlestickChartProps> = ({ data }) => {
   const options: ChartOptions<'candlestick'> = {
     responsive: true,
-    maintainAspectRatio: false, // Allows chart to resize within the container
+    maintainAspectRatio: false,
     scales: {
       x: {
-        type: 'category', // Use categories (dates) for x-axis
+        type: 'category',
         grid: {
-          display: true, // Show grid lines on x-axis
+          display: true,
         },
         ticks: {
-          maxRotation: 0, // Keep the labels from rotating
-          autoSkip: true, // Auto-skip some labels if they overlap
+          maxRotation: 0,
+          autoSkip: true,
         },
       },
       y: {
-        beginAtZero: false, // Allow y-axis to start from data's minimum
+        beginAtZero: false,
         grid: {
-          display: true, // Show grid lines on y-axis
+          display: true,
         },
         ticks: {
-          stepSize: 10, // Adjust this based on your data range
+          stepSize: 10,
         },
       },
     },
     plugins: {
       tooltip: {
-        enabled: true, // Enable tooltips to show data on hover
+        enabled: true,
       },
       legend: {
         display: true,
-        position: 'top', // Show legend at the top of the chart
+        position: 'top',
         labels: {
-          color: '#000', // Legend text color
+          color: '#000',
         },
       },
     },

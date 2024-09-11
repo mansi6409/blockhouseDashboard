@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Geist Sans and Geist Mono Font Variables */
 :root {
-  --font-geist-sans: 'Geist Sans', sans-serif;
-  --font-geist-mono: 'Geist Mono', monospace;
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
 }
 
 html {
@@ -16,41 +15,37 @@ html {
   font-family: var(--font-geist-mono);
 }
 
-  .tab-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .tab {
-    margin: 0 10px; /* Add margin between the tabs */
-    padding: 10px 20px;
-    border: 2px solid #4A90E2; /* Add a border */
-    background-color: #f0f0f0; /* Set a background color */
-    color: #333;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: 2px solid #4a90e2;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .tab:hover {
-    background-color: #4A90E2; /* Change background on hover */
-    color: white; /* Change text color on hover */
+  background-color: #4a90e2;
+  color: white;
 }
 
 .tab-active {
-    background-color: #4A90E2;
-    color: white;
+  background-color: #4a90e2;
+  color: white;
 }
 
 .chart-container {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
-
-  

@@ -18,11 +18,10 @@ This project is a dashboard featuring multiple interactive charts including Bar,
 
 Before running the application, make sure you have the following installed:
 
-- **Node.js** (v14 or higher)
+- **Node.js** (v15 or higher)
 - **npm** (or Yarn)
 - **Python** (v3.7 or higher)
 - **Django**
-- **PostgreSQL** (optional, but recommended)
 
 ### Backend Setup
 
@@ -42,14 +41,9 @@ Before running the application, make sure you have the following installed:
    Run the following to install all Python dependencies:
    ```bash
    pip install -r requirements.txt
-   ```
+   ````
 
-4. **Apply Database Migrations**:
-   ```bash
-   python manage.py migrate
-   ```
-
-5. **Run the Backend Server**:
+4. **Run the Backend Server**:
    Start the Django development server:
    ```bash
    python manage.py runserver
@@ -96,6 +90,15 @@ Before running the application, make sure you have the following installed:
 
 3. **Navigate to** [http://localhost:3000](http://localhost:3000) to see the dashboard and charts.
 
+   ```bash
+   Note: If the port is other than 3000, then navigate to backend > config > setting.py and update CORS_ALLOWED_ORIGINS with the correct port number
+   ```
+
+4. **Running Unit tests for Django**: Navigate to backend folder and run:
+   ```bash
+   python manage.py test
+   ```
+
 ## Backend API
 
 The Django API serves the data for each chart. Below are the available API endpoints:
@@ -111,6 +114,7 @@ The Django API serves the data for each chart. Below are the available API endpo
 - **Django**: Used for creating the backend API that provides chart data.
 - **Django REST Framework**: To easily create REST APIs.
 - **Python**: For the backend logic and API.
+- **Django's built-in testing framework**: For running unit tests.
 
 ### Frontend:
 - **Next.js**: Used as the React framework to create the dashboard.
@@ -121,6 +125,11 @@ The Django API serves the data for each chart. Below are the available API endpo
 - **Axios**: For making API requests from the frontend.
 
 ## Approach and Thought Process
+
+The aim is to create the dashboard such that the code structure is clean and organized and making future changes to the code should be easy. This should be possible without refactoring a lot of code. Keeping this in mind, The repository has been divided into 2 main parts - frontend and backend. Both of these parts have their own package.json and requirements.txt respectively for easy setup.
+
+Additionally, the components for frontend have been created as disjoint component so that every component can function on its own without messing up with other components. This helped in easy debugging for every component.
+
 
 ### Backend:
 - The Django REST API is structured with different endpoints for each chart's data, ensuring modularity and easy maintainability.

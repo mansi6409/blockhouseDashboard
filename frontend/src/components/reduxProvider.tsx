@@ -1,9 +1,7 @@
-// src/components/ReduxProvider.tsx
-
-'use client'; // This ensures that this component is treated as a client-side component
+'use client';
 
 import { Provider } from 'react-redux';
-import { store } from '../redux/store'; // Import your Redux store
+import { store } from '../redux/store';
 
 export default function ReduxProvider({
   children,

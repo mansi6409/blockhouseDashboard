@@ -12,11 +12,10 @@ import {
   ChartOptions
 } from 'chart.js';
 
-// Register the required components for bar chart
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 interface BarChartProps {
-  data: ChartData<'bar'>;  // 'datasets' must be part of this
+  data: ChartData<'bar'>;
 }
 
 const BarChart: React.FC<BarChartProps> = ({ data }) => {

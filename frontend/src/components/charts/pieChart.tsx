@@ -1,9 +1,7 @@
-// components/charts/PieChart.tsx
 'use client';
 import { Pie } from 'react-chartjs-2';
 import { Chart, ArcElement, Title, Tooltip, Legend, ChartData, ChartOptions } from 'chart.js';
 
-// Register the required components
 Chart.register(ArcElement, Title, Tooltip, Legend);
 
 interface PieChartProps {

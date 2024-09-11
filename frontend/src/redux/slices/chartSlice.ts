@@ -1,9 +1,6 @@
-// redux/slices/chartSlice.ts
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Define the chart state interface
 interface ChartState {
   candlestick: any;
   line: any;
@@ -13,7 +10,6 @@ interface ChartState {
   error: string | null;
 }
 
-// Initial state for the slice
 const initialState: ChartState = {
   candlestick: null,
   line: null,
@@ -23,7 +19,6 @@ const initialState: ChartState = {
   error: null,
 };
 
-// Fetch chart data from the backend
 export const fetchChartData = createAsyncThunk(
   "chart/fetchData",
   async (_, { rejectWithValue }) => {
@@ -42,13 +37,11 @@ export const fetchChartData = createAsyncThunk(
         pie: pieRes.data,
       };
     } catch (error: any) {
-      // Handle error and return rejection with value
       return rejectWithValue(error.response?.data || "An error occurred");
     }
   }
 );
 
-// Chart slice definition
 const chartSlice = createSlice({
   name: "chart",
   initialState,

@@ -32,8 +32,8 @@ def candlestick_data(request):
                     {"x": "2023-01-09", "o": 70, "h": 80, "l": 65, "c": 75},
                     {"x": "2023-01-10", "o": 75, "h": 85, "l": 70, "c": 80}
                 ],
-                "borderColor": "rgba(0, 0, 0, 1)",  # Color for borders
-                "backgroundColor": "rgba(0, 0, 0, 0.1)"  # Color for candlestick body
+                "borderColor": "rgba(0, 0, 0, 1)",
+                "backgroundColor": "rgba(0, 0, 0, 0.1)"
             }
         ]
     }
@@ -58,24 +58,24 @@ def line_chart_data(request):
 @api_view(['GET'])
 def bar_chart_data(request):
     data = {
-        "labels": ["January", "February", "March", "April"],  # x-axis labels
+        "labels": ["January", "February", "March", "April"],
         "datasets": [
             {
-                "label": "Sales 2023",  # Label for the dataset
-                "data": [65, 59, 80, 81],  # The actual data points for the y-axis
+                "label": "Sales 2023",
+                "data": [65, 59, 80, 81],
                 "backgroundColor": [
-                    'rgba(75, 192, 192, 0.2)',  # Background color for each bar
+                    'rgba(75, 192, 192, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                 ],
                 "borderColor": [
-                    'rgba(75, 192, 192, 1)',  # Border color for each bar
+                    'rgba(75, 192, 192, 1)',
                     'rgba(54, 162, 235, 1)',
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                 ],
-                "borderWidth": 1,  # Border width for each bar
+                "borderWidth": 1,
             }
         ]
     }

@@ -1,7 +1,5 @@
-// app/layout.tsx
-
 import './globals.css';
-import ReduxProvider from '../src/components/reduxProvider'; // Import your client-side Redux provider
+import ReduxProvider from '../src/components/reduxProvider';
 import ClientLayout from './clientLayout';
 
 export const metadata = {
@@ -17,7 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Link to the hexagon favicon */}
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
