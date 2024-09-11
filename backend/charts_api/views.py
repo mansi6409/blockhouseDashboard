@@ -12,9 +12,17 @@ def home(request):
 @api_view(['GET'])
 def candlestick_data(request):
     data = {
-        "data": [
-            {"x": "2023-01-01", "open": 30, "high": 40, "low": 25, "close": 35},
-            {"x": "2023-01-02", "open": 35, "high": 45, "low": 30, "close": 40},
+        "labels": ["2023-01-01", "2023-01-02"],  # Dates
+        "datasets": [
+            {
+                "label": "Candlestick Data",
+                "data": [
+                    {"x": "2023-01-01", "o": 30, "h": 40, "l": 25, "c": 35},
+                    {"x": "2023-01-02", "o": 35, "h": 45, "l": 30, "c": 40}
+                ],
+                "borderColor": "rgba(0, 0, 0, 1)",  # Color for border
+                "backgroundColor": "rgba(0, 0, 0, 0.1)"  # Color for the candlestick body
+            }
         ]
     }
     return Response(data)
@@ -23,7 +31,14 @@ def candlestick_data(request):
 def line_chart_data(request):
     data = {
         "labels": ["Jan", "Feb", "Mar", "Apr"],
-        "data": [10, 20, 30, 40]
+        "datasets": [
+            {
+            "label": "Dataset 1",
+            "data": [10, 20, 30, 40],
+            "borderColor": "rgba(75, 192, 192, 1)",
+            "backgroundColor": "rgba(75, 192, 192, 0.2)"
+            }
+        ]
     }
     return Response(data)
 
@@ -31,7 +46,13 @@ def line_chart_data(request):
 def bar_chart_data(request):
     data = {
         "labels": ["Product A", "Product B", "Product C"],
-        "data": [100, 150, 200]
+        "datasets": [
+            {
+            "label": "Dataset 1",
+            "data": [100, 150, 200],
+            "backgroundColor": ["#FF6384", "#36A2EB", "#FFCE56"]
+            }
+        ]
     }
     return Response(data)
 
@@ -39,6 +60,11 @@ def bar_chart_data(request):
 def pie_chart_data(request):
     data = {
         "labels": ["Red", "Blue", "Yellow"],
-        "data": [300, 50, 100]
+        "datasets": [
+            {
+            "data": [300, 50, 100],
+            "backgroundColor": ["#FF6384", "#36A2EB", "#FFCE56"]
+            }
+        ]
     }
     return Response(data)
