@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3006",
+    "http://localhost:3008",
 ]
 
 ROOT_URLCONF = 'config.urls'
